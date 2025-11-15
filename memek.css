@@ -1,0 +1,240 @@
+    body {
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #0f0f23 100%);
+      color: #ffffff;
+      padding: 20px;
+      transition: background 0.5s ease, color 0.5s ease;
+      overflow-x: hidden;
+      text-align: center;
+      font-family: "Arial", sans-serif;
+      position: relative;
+      margin: 0;
+      min-height: 100vh;
+    }
+    body.light { 
+      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%); 
+      color: #111; 
+    }
+
+    /* Aesthetic Particles Background */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 10s infinite linear;
+    }
+    .particle:nth-child(odd) {
+      animation-duration: 15s;
+      animation-delay: -5s;
+    }
+    .particle:nth-child(even) {
+      animation-duration: 20s;
+      animation-delay: -10s;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Simple Text (No effects) */
+    .fancy-text {
+      font-size: 22px;
+      font-weight: bold;
+      font-family: "Arial", sans-serif;
+      letter-spacing: 1px;
+      color: inherit; /* Inherits from body */
+    }
+
+    h2.fancy-text { 
+      font-size: 32px; 
+      margin: 20px 0; 
+    }
+
+    .topbar { 
+      margin-bottom: 30px; 
+    }
+
+    input, button, select {
+      padding: 12px;
+      margin: 8px 0;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      border: 2px solid #555;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+      font-weight: bold;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    input:focus, button:focus {
+      outline: none;
+      border-color: #00ffff;
+      box-shadow: 0 0 20px #00ffff, 0 6px 12px rgba(0,0,0,0.4);
+    }
+    button {
+      background: linear-gradient(45deg, #0f0, #39ff14);
+      color: #000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #39ff14, #0f0);
+      box-shadow: 0 0 20px #39ff14, 0 8px 16px rgba(0,0,0,0.5);
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 150px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 2px solid #444;
+      background: rgba(34,34,34,0.9);
+      color: #0f0;
+      padding: 10px;
+      font-family: monospace;
+      overflow-y: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    textarea:focus {
+      border-color: #00ffff;
+      box-shadow: 0 0 20px #00ffff, 0 6px 12px rgba(0,0,0,0.4);
+    }
+
+    progress {
+      width: 100%;
+      max-width: 600px;
+      height: 25px;
+      margin-top: 15px;
+      border-radius: 10px;
+      background: #333;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    }
+    progress::-webkit-progress-bar { 
+      background: #333; 
+      border-radius: 10px; 
+    }
+    progress::-webkit-progress-value {
+      background: linear-gradient(270deg, #00ffcc, #00bfff, #ff00ff);
+      animation: progressAnim 2s linear infinite;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,204,0.5);
+    }
+
+    fieldset {
+      border: 2px solid #555;
+      padding: 15px;
+      margin: 15px auto;
+      border-radius: 15px;
+      max-width: 500px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+    fieldset:hover {
+      box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+    }
+    legend { 
+      padding: 0 10px; 
+      font-weight: bold;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 8px 0;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    label:hover {
+      transform: translateX(5px);
+    }
+    label span { 
+      flex: 1; 
+      text-align: left; 
+    }
+
+    /* Toggle switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 55px;
+      height: 26px;
+    }
+    .switch input { display:none; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #444;
+      transition: all 0.4s ease;
+      border-radius: 26px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: all 0.4s ease;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    input:checked + .slider {
+      background-color: #0f0;
+      box-shadow: 0 0 15px #0f0, inset 0 2px 4px rgba(0,0,0,0.5);
+    }
+    input:checked + .slider:before { 
+      transform: translateX(29px); 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .switch:hover .slider {
+      transform: scale(1.05);
+    }
+
+    /* Preview section */
+    #preview {
+      width: 100%;
+      max-width: 800px;
+      height: 300px;
+      border: 3px solid #0072ff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+    #preview:hover {
+      box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+    }
+
+    /* Animations */
+    @keyframes progressAnim { 
+      0%{background-position:0% 50%;} 
+      100%{background-position:200% 50%;} 
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      h2.fancy-text { font-size: 24px; }
+      input, button, textarea, progress, fieldset { max-width: 100%; }
+    }
